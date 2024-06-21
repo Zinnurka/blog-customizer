@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export const fontFamilyClasses = [
 	'open-sans',
 	'ubuntu',
@@ -177,3 +179,23 @@ export const defaultArticleState = {
 };
 
 export type ArticleStateType = typeof defaultArticleState;
+
+export type ArticleParamsFormProps = {
+	font: OptionType;
+	setFont: Dispatch<SetStateAction<OptionType>>;
+
+	fontSize: OptionType;
+	setFontSize: Dispatch<SetStateAction<OptionType>>;
+
+	fontColor: OptionType;
+	setFontColor: Dispatch<SetStateAction<OptionType>>;
+
+	bgColor: OptionType;
+	setBgColor: Dispatch<SetStateAction<OptionType>>;
+
+	contentWidth: OptionType;
+	setContentWidth: Dispatch<SetStateAction<OptionType>>;
+
+	onResetClick: () => void;
+	onSubmitClick: () => void;
+};
