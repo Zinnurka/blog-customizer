@@ -24,6 +24,7 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 	const formRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {
+		if (!isFormOpen) return;
 		const closeForm = (event: MouseEvent) => {
 			if (formRef.current && !formRef.current.contains(event.target as Node)) {
 				setIsFormOpen(false);
