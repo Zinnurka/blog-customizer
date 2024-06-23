@@ -23,12 +23,12 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 	};
 	const formRef = useRef<HTMLElement>(null);
 
-	const closeForm = (event: MouseEvent) => {
-		if (formRef.current && !formRef.current.contains(event.target as Node)) {
-			setIsFormOpen(false);
-		}
-	};
 	useEffect(() => {
+		const closeForm = (event: MouseEvent) => {
+			if (formRef.current && !formRef.current.contains(event.target as Node)) {
+				setIsFormOpen(false);
+			}
+		};
 		document.body.addEventListener('mousedown', closeForm);
 		return () => {
 			document.body.removeEventListener('mousedown', closeForm);
