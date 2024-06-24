@@ -14,6 +14,7 @@ import {
 import { Select } from '../select/Select';
 import { RadioGroup } from 'components/radio-group';
 import { Separator } from 'components/separator';
+import { Text } from '../text/Text';
 
 export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 	const [isFormOpen, setIsFormOpen] = useState(false);
@@ -48,6 +49,9 @@ export const ArticleParamsForm = (props: ArticleParamsFormProps) => {
 			<ArrowButton onClick={handleArrowButtonClick} isActive={isFormOpen} />
 			<aside className={cn(styles.container, container)} ref={formRef}>
 				<form className={styles.form} onSubmit={handleSubmit}>
+					<Text as='h2' size={31} weight={800} uppercase>
+						Задайте параметры
+					</Text>
 					<Select
 						selected={props.font}
 						options={fontFamilyOptions}
